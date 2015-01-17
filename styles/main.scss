@@ -1,0 +1,74 @@
+@import 'bourbon/bourbon';
+$visual-grid: false;
+/* \$gutter: em(47px); */
+@import 'neat/neat';
+
+$body-font: 'Helvetica', sans-serif;
+
+$jet-stream: #BCD2D0;
+$cerulean: #21BEDE;
+$maya-blue: #66CBFF;
+$dark-powder-blue: #003399;
+$pacific-blue: #0099CB;
+
+$body-color: $maya-blue;
+$accent-color: $cerulean;
+$shadow-color: $dark-powder-blue;
+$calc-color: $pacific-blue;
+
+
+$button-color: $jet-stream;
+
+
+body {
+  background-color: $body-color;
+  font-family: $body-font;
+}
+
+.calculator {
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 15px;
+  background-color: $button-color;
+  font-family: $body-font;
+  font-size: 25px;
+}
+.keys {
+  background-color: $calc-color;
+  height: 500px;
+  width: 30%;
+  padding: 20px 20px;
+  margin-top: 50px;
+  @include outer-container;
+  .column1 {
+    @include span-columns(3);
+/*     display: inline-block; */
+  }
+  .rightrows {
+    @include span-columns (9);
+    #display {
+      @include span-columns (9 of 9);
+    }
+    .column2,
+    .column3,
+    .column4 {
+      @include span-columns (3 of 9);
+    }
+  }
+}
+
+
+#display {
+  font-size: 70px;
+  height: 80px;
+  width: 100%;
+  background-color: $body-color;
+  text-align: right;
+  padding-right: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
